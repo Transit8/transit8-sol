@@ -111,6 +111,10 @@ contract ArtMarket {
       profiles[msg.sender] = url;
   }
 
+  function getItemOwner(uint itemID, uint ownerIndex) public constant returns(address) {
+      return items[itemID].owners[ownerIndex];
+  }
+
   //blockstackUrl is empty if the item is stored on IPFS
   function addItem(string title, bytes32 hash, string blockstackUrl) public {
     require(!itemExists[hash]);
@@ -177,10 +181,6 @@ contract ArtMarket {
      auctions[auctionID].bids[msg.sender] = auctions[auctionID].bids[msg.sender] + msg.value;
   }
 
-
-  function getItemOwner(uint itemID, uint ownerIndex) public constant returns(address) {
-      return items[itemID].owners[ownerIndex];
-  }
 
   function getMyBid(uint auctionID) public constant returns(uint) {
       return auctions[auctionID].bids[msg.sender];
