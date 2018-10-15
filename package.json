@@ -1,0 +1,13 @@
+{
+    "name": "ArtMarketContracts",
+    "version": "0.0.1",
+    "description": "Smart contract code for art market truffle project",
+    "main": "",
+    "author": "Mike Cohen",
+    "license": "ISC",
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mjoecohen/sybella-sol"
+    }
+}
